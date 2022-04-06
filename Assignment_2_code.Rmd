@@ -40,5 +40,37 @@ Overview <- data.frame("Season" = c(1:9),
                        'Average viewership' = c(5.4,8.0,8.3,8.9,9.0,7.8,7.7,6.5,5.1))
 kbl(Overview, escape = F) %>%  kable_paper("striped", full_width = F)
 ```
+
 ---
 
+**Average viewership for each season.**
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=4, fig.height=4, fig.align = 'center'}
+plot1 <- ggplot(Overview, aes(x = Season, y = Average.viewership))+
+  geom_line( color = "#CC8B3C", size = 0.7)+
+  geom_point( color = "#CC8B3C", size = 1)+
+  labs(x = "Season",y = "Average viewership (in millions)") +
+  theme_bw() +
+  scale_x_continuous(breaks=seq(1,max(Overview$Season),1))
+plot1
+```
+
+<br> </br>
+
+---
+
+**The position of each season in the rankings.**
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=4, fig.height=4,fig.align = 'center'}
+plot1 <- ggplot(Overview, aes(x = Season, y = Rank))+
+  geom_line( color = "#CC8B3C", size = 0.7)+
+  geom_point( color = "#CC8B3C", size = 1)+
+  labs(x = "Season",y = "Average viewership (in millions)") +
+  theme_bw() +
+  scale_x_continuous(breaks=seq(1,max(Overview$Season),1))
+plot1
+```
+
+<br> </br>
+
+---
