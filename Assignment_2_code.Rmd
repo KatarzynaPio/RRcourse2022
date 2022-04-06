@@ -1,0 +1,31 @@
+---
+title: "Assignment II"
+author: "Katarzyna Piotrowska"
+date: '2022-04-06'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+```{r echo=FALSE, results='hide', error=FALSE, message=FALSE, warning=FALSE}
+###### Start  ##################################################
+###### Check, installation and loading of required packages #######
+requiredPackages = c("tidyverse","dplyr", "ggplot2","kableExtra") # list of required packages
+for(i in requiredPackages){if(!require(i,character.only = TRUE)) install.packages(i)}
+for(i in requiredPackages){if(!require(i,character.only = TRUE)) library(i,character.only = TRUE) }
+```
+
+<br> </br>
+
+![](IMG/logo.png)
+
+
+**The Office** is an American television sitcom broadcast on *NBC*. Created as an adaptation by *Greg Daniels* of the British series of the same name, it is a mockumentary that follows the day-to-day lives of the employees of the Scranton, Pennsylvania branch of *Dunder Mifflin*, a fictional paper supply company. The series ran on *NBC* in the United States from March 24, 2005, to May 16, 2013. Additionally, nine spin-off series of webisodes of *The Office* have been aired on *NBC.com*.
+
+![](IMG/poster.jpg)
+
+---
