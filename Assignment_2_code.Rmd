@@ -29,3 +29,16 @@ for(i in requiredPackages){if(!require(i,character.only = TRUE)) library(i,chara
 ![](IMG/poster.jpg)
 
 ---
+
+
+**Basic statistics about the series.**
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE}
+Overview <- data.frame("Season" = c(1:9),
+                       "Number of Episodes" = c(6,22,25,19,28,26,26,24,25),
+                       "Rank" = c(102,67,68,77,52,52,53,87,94),
+                       'Average viewership' = c(5.4,8.0,8.3,8.9,9.0,7.8,7.7,6.5,5.1))
+kbl(Overview, escape = F) %>%  kable_paper("striped", full_width = F)
+```
+---
+
