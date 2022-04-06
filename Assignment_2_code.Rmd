@@ -102,3 +102,34 @@ plot2
 
 ---
 
+
+#### Observations   
+```{r echo=FALSE, results='hide', error=FALSE, message=FALSE, warning=FALSE}
+change = round(((Overview[Overview$Season == max(Overview$Season),]$Average.viewership - Overview[Overview$Season == min(Overview$Season),]$Average.viewership)/Overview[Overview$Season == min(Overview$Season),]$Average.viewership),4)*100
+finalSeason =max(Overview$Season)
+lastView = Overview[Overview$Season == finalSeason, ]$Average.viewership
+mostPopularSeason = Overview[Overview$Average.viewership == max(Overview$Average.viewership),]$Season
+mostPopularSeasonAvg = max(Overview$Average.viewership)
+mostRankSeason = Overview[Overview$Rank == max(Overview$Rank),]$Season
+mostRank =  max(Overview$Rank)
+lowestRankSeason = Overview[Overview$Rank == min(Overview$Rank),]$Season
+lowestRank =  min(Overview$Rank)
+```
+
+
+The average viewership of **The Office** decreased by `r change` percent between seasons 1 and  `r finalSeason`.  
+The viewership of the last season was only `r lastView` million.  
+The most popular was season number `r mostPopularSeason` for which the average viewership was equal `r mostPopularSeasonAvg` million.  
+On the other hand, the highest rated season was season number `r mostRankSeason`, which ranked #`r mostRank`.  
+By comparison, season number`r lowestRankSeason` was the worst, which ranked #`r lowestRank`.  
+
+
+
+
+
+---
+#### Source 
+The entire task was prepared based on the website:  
+https://en.wikipedia.org/wiki/List_of_The_Office_(American_TV_series)_episodes
+
+
