@@ -65,7 +65,7 @@ plot1
 plot1 <- ggplot(Overview, aes(x = Season, y = Rank))+
   geom_line( color = "#CC8B3C", size = 0.7)+
   geom_point( color = "#CC8B3C", size = 1)+
-  labs(x = "Season",y = "Average viewership (in millions)") +
+  labs(x = "Season",y = "Rank") +
   theme_bw() +
   scale_x_continuous(breaks=seq(1,max(Overview$Season),1))
 plot1
@@ -110,18 +110,18 @@ finalSeason =max(Overview$Season)
 lastView = Overview[Overview$Season == finalSeason, ]$Average.viewership
 mostPopularSeason = Overview[Overview$Average.viewership == max(Overview$Average.viewership),]$Season
 mostPopularSeasonAvg = max(Overview$Average.viewership)
-mostRankSeason = Overview[Overview$Rank == max(Overview$Rank),]$Season
-mostRank =  max(Overview$Rank)
-lowestRankSeason = Overview[Overview$Rank == min(Overview$Rank),]$Season
-lowestRank =  min(Overview$Rank)
+mostRankSeason = Overview[Overview$Rank == min(Overview$Rank),]$Season
+mostRank =  min(Overview$Rank)
+lowestRankSeason = Overview[Overview$Rank == max(Overview$Rank),]$Season
+lowestRank =  max(Overview$Rank)
 ```
 
 
 The average viewership of **The Office** decreased by `r change` percent between seasons 1 and  `r finalSeason`.  
-The viewership of the last season was only `r lastView` million.  
-The most popular was season number `r mostPopularSeason` for which the average viewership was equal `r mostPopularSeasonAvg` million.  
-On the other hand, the highest rated season was season number `r mostRankSeason`, which ranked #`r mostRank`.  
-By comparison, season number`r lowestRankSeason` was the worst, which ranked #`r lowestRank`.  
+The viewership of the last season was `r lastView` million.  
+On the other hand, the most popular was season number `r mostPopularSeason` for which the average viewership was equal `r mostPopularSeasonAvg` million.  
+The highest rated seasons were season number `r mostRankSeason[1]` and  `r mostRankSeason[2]`, which ranked #`r mostRank`.  
+By comparison, season number `r lowestRankSeason` was the worst, which ranked #`r lowestRank`.  
 
 
 
