@@ -74,3 +74,31 @@ plot1
 <br> </br>
 
 ---
+
+
+**The episode-to-episode changes in viewership.**
+
+```{r echo=FALSE, error=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=4,fig.align = 'center'}
+# data scraped from wikipedia
+EpisodeToEpisode <- read.table("IMG/list.txt", sep = " " , header = T ,
+                     na.strings ="", stringsAsFactors= F)
+
+#print(EpisodeToEpisode)
+
+EpisodeToEpisode$ViewLast = lag(EpisodeToEpisode$View)
+EpisodeToEpisode$ViewChange = 100* round ((EpisodeToEpisode$View- EpisodeToEpisode$ViewLast)/EpisodeToEpisode$ViewLast,4)
+
+#head(EpisodeToEpisode)  
+
+EpisodeToEpisode$Season <- as.factor(EpisodeToEpisode$Season )
+plot2 <- ggplot(EpisodeToEpisode, aes(y = ViewChange, x = Episode, fill =  Season ))+
+  geom_col()+
+  labs(x = "Episode",y = "Change in Viewership compared to the last episode [%]") +
+  theme_bw() +
+  scale_x_continuous(breaks=seq(2,max(EpisodeToEpisode$Episode),10))
+
+plot2
+```
+
+---
+
