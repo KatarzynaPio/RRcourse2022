@@ -1,0 +1,8 @@
+kasiapiotrowska08@instance-1:~$ uname -a
+Linux instance-1 5.4.0-1072-gcp #77~18.04.1-Ubuntu SMP Wed Apr 13 07:49:40 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+kasiapiotrowska08@instance-1:~$ touch test.txt
+kasiapiotrowska08@instance-1:~$ ls -l 
+total 0
+-rw-rw-r-- 1 kasiapiotrowska08 kasiapiotrowska08 0 May 12 15:02 test.txt
+kasiapiotrowska08@instance-1:~$ 
+
